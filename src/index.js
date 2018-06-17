@@ -25,11 +25,11 @@ class Banner extends Component {
   }
 
 
-  async hideBanner() {
+  /*async hideBanner() {
     await this.setState({bannerMessage: this.props.title});
     await this.timeout(1000 + this.props.visibleTime);
     await this.setState({ bannerMessage: null });
-  }
+  }*/
 
   renderBanner() {
     if (this.props.title) {

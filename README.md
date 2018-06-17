@@ -1,7 +1,7 @@
 
-![npm](https://img.shields.io/npm/dt/file-uploader-js.svg)
-![npm](https://img.shields.io/npm/v/file-uploader-js.svg)
-![npm](https://img.shields.io/npm/l/file-uploader-js.svg)
+![npm](https://img.shields.io/npm/dt/react-js-banner.svg)
+![npm](https://img.shields.io/npm/v/react-js-banner.svg)
+![npm](https://img.shields.io/npm/l/react-js-banner.svg)
 
 
 # react-js-banner
@@ -9,7 +9,11 @@ React JS Banner Component
 
 # Description
 
-Banner text component, style can be customized. And banner can be visible for a specific amount of time
+Banner text component, style can be customized.
+
+# How it looks
+
+![alt text](banner.png "React JS Banner example")
 
 # Installation
 
@@ -49,7 +53,7 @@ For instance, you can define the background color, font color, font family, size
 Props available:
 * title (banner title/message)
 * css (style for the banner)
-* visibleTime (time that the banner will be visible on screen)
+
 
 # Props
 
@@ -57,12 +61,12 @@ Props available:
 | ------------- |:-------------:| -----:|:-----|
 | title      | String | Y | Adding some text will make the banner appear |
 | css | object     | N|  CSS customizations |
-| visibleTime | int     | N|  Time in ms that the banner will be visible |
+
 
 
 # Changelog
 
-### v0.0.1
+### v0.1.0
 * Initial release
 
 
