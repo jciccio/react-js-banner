@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import LoadingProgress from 'react-js-banner';
+import Banner from 'react-js-banner';
 import './App.css';
 
 class App extends Component {
@@ -8,8 +8,8 @@ class App extends Component {
     super(props);
     this.state = {
       banner1Css: { color: "#FFF", backgroundColor: "green" },
-      banner2Css: { color: "#FFF", backgroundColor: "orange" },
-      banner3Css: { color: "#FFF", backgroundColor: "red" }
+      banner2Css: { color: "#000", backgroundColor: "grey", fontFamily: "arial" },
+      banner3Css: { color: "#FFF", backgroundColor: "red", fontSize: 20 }
     };
 
   }
@@ -23,7 +23,10 @@ class App extends Component {
           <h1 className="App-title">react-js-banner Component</h1>
         </header>
 
-       
+       <Banner title="This is an example banner" />
+       <Banner title="This is an example banner with CSS" css={this.state.banner1Css}/>
+       <Banner title="This is an example banner with CSS" css={this.state.banner2Css}/>
+       <Banner title="This is an example banner with CSS" css={this.state.banner3Css}/>
 
       </div>
     );

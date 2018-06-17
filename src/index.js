@@ -6,15 +6,17 @@ import "./banner.css";
 class Banner extends Component {
   constructor(props) {
     super(props);
+     this.state = {
+      bannerMessage: null
+    };
   }
 
   renderBanner() {
     if (this.props.title) {
 
       if (this.props.visibleTime && this.props.visibleTime > 0){
-        hideBanner();
+       // hideBanner();
       }
-
       return (
         <div key="banner" className="banner" style={this.props.css}>
           <label>{this.props.title}</label>
@@ -29,10 +31,11 @@ class Banner extends Component {
     return new Promise(resolve => setTimeout(resolve, ms));
   }
 
-  async hideBanner() {
+ /* async hideBanner() {
+    await this.setState({bannerMessage: this.props.title});
     await this.timeout(1000 + this.props.visibleTime);
     await this.setState({ bannerMessage: null });
-  }
+  }*/
 
   render() {
     return (

@@ -1,7 +1,7 @@
 {
-  "name": "file-uploader-js",
-  "version": "0.1.9",
-  "description": "React JS File uploader handler component. Returns local uploaded file contents via callback",
+  "name": "react-js-banner",
+  "version": "0.0.1",
+  "description": "React JS Banner component customizable with autohide option",
   "main": "build/index.js",
   "peerDependencies": {
     "react": "^16.0.0"
@@ -32,19 +32,21 @@
     "babel-preset-env": "^1.5.1",
     "style-loader": "^0.21.0",
     "css-loader": "^0.28.11",
-    "babel-polyfill": "^6.26.0"
+    "babel-polyfill": "^6.26.0",
+    "react-addons-css-transition-group": "^15.6.2",
+    "react-dom": "^16.3.2"
   },
   "repository": {
     "type": "git",
     "url": "https://github.com/jciccio/file-uploader.git"
   },
   "keywords": [
-    "file uploader",
-    "js file upload",
-    "file upload",
-    "upload",
-    "uploader",
-    "react file upload"
+    "react js banner",
+    "js banner",
+    "banner",
+    "message notification",
+    "notification",
+    "toaster"
   ],
   "license": "MIT",
   "homepage": "https://github.com/jciccio/file-uploader/blob/master/README.md"

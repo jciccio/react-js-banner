@@ -36,6 +36,16 @@ Example:
 />
 ```
 
+For instance, you can define the background color, font color, font family, size, etc.
+
+```json
+{
+  banner1Css: { color: "#FFF", backgroundColor: "green" },
+  banner2Css: { color: "#000", backgroundColor: "grey", fontFamily: "arial" },
+  banner3Css: { color: "#FFF", backgroundColor: "red", fontSize: 20 }
+}
+```
+
 Props available:
 * title (banner title/message)
 * css (style for the banner)
