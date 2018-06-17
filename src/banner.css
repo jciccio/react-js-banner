@@ -1,0 +1,26 @@
+.banner{
+  background-color: orange;
+  text-align: center;
+  padding: 10px 10px;
+  font-size: 16px;
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+
+.banner-transition-appear {
+  opacity: 0.01;
+}
+
+.banner-transition-appear.banner-transition-appear-active {
+  opacity: 1;
+  transition: opacity 2s ease;
+}
+
+.banner-transition-leave {
+  opacity: 1;
+}
+
+.banner-transition-leave.banner-transition-leave-active {
+  opacity: 0.01;
+  transition: opacity 2s ease;
+}

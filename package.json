@@ -1,0 +1,51 @@
+{
+  "name": "file-uploader-js",
+  "version": "0.1.9",
+  "description": "React JS File uploader handler component. Returns local uploaded file contents via callback",
+  "main": "build/index.js",
+  "peerDependencies": {
+    "react": "^16.0.0"
+  },
+  "dependencies": {
+    "react": "^16.0.0",
+    "webpack": "^2.6.1"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "webpack --watch",
+    "build": "webpack"
+  },
+  "author": {
+    "name": "Jose Antonio Ciccio",
+    "email": "jciccio@gmail.com"
+  },
+  "devDependencies": {
+    "babel-cli": "^6.2.0",
+    "babel-core": "^6.2.1",
+    "babel-eslint": "^6.1.2",
+    "babel-loader": "^6.2.0",
+    "babel-preset-es2015": "^6.1.18",
+    "babel-preset-react": "^6.3.13",
+    "babel-preset-stage-1": "^6.1.18",
+    "babel-register": "^6.3.13",
+    "babel-runtime": "^6.3.19",
+    "babel-preset-env": "^1.5.1",
+    "style-loader": "^0.21.0",
+    "css-loader": "^0.28.11",
+    "babel-polyfill": "^6.26.0"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/jciccio/file-uploader.git"
+  },
+  "keywords": [
+    "file uploader",
+    "js file upload",
+    "file upload",
+    "upload",
+    "uploader",
+    "react file upload"
+  ],
+  "license": "MIT",
+  "homepage": "https://github.com/jciccio/file-uploader/blob/master/README.md"
+}
