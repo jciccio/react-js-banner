@@ -26,7 +26,7 @@ class App extends Component {
        <Banner title="This is an example banner" />
        <Banner title="This is an example banner with CSS" css={this.state.banner1Css}/>
        <Banner title="This is an example banner with CSS" css={this.state.banner2Css}/>
-       <Banner title="This is an example banner with CSS" css={this.state.banner3Css}/>
+       <Banner title="This is an example banner with CSS" css={this.state.banner3Css} visibleTime={1000}/>
 
       </div>
     );
