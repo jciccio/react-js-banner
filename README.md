@@ -5,6 +5,7 @@
 
 
 # react-js-banner
+
 React JS Banner Component
 
 # Description
@@ -42,7 +43,7 @@ Example:
 
 For instance, you can define the background color, font color, font family, size, etc.
 
-```json
+```java
 {
   banner1Css: { color: "#FFF", backgroundColor: "green" },
   banner2Css: { color: "#000", backgroundColor: "grey", fontFamily: "arial" },

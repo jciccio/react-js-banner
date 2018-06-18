@@ -1,6 +1,6 @@
 {
   "name": "react-js-banner",
-  "version": "0.0.1",
+  "version": "0.1.0",
   "description": "React JS Banner component customizable with autohide option",
   "main": "build/index.js",
   "peerDependencies": {
