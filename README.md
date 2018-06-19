@@ -6,11 +6,11 @@
 
 # react-js-banner
 
-React JS Banner Component
+React JS Banner Component with fade in and fade out animation.
 
 # Description
 
-Banner text component, style can be customized.
+Banner text component, style can be customized. By default the banner has a fade in and fade out animation of 1s
 
 # How it looks
 
