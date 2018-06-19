@@ -10,7 +10,7 @@ React JS Banner Component with fade in and fade out animation.
 
 # Description
 
-Banner text component, style can be customized. By default the banner has a fade in and fade out animation of 1s
+Banner text component, style (font and background) can be customized using common css rules. By default the banner has a fade in and fade out animation of 1s.
 
 # How it looks
 
