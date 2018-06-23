@@ -14,32 +14,47 @@ class Banner extends Component {
   constructor(props) {
     super(props);
      this.state = {
-      bannerMessage: null
+      visibleTime: 0,
+      show: undefined
     };
   }
 
   static getDerivedStateFromProps(nextProps, prevState) {
-    //if (nextProps.current !== prevState.currentItem) {
-      if (nextProps.visibleTime !== undefined  && nextProps.visibleTime > 0){
-        let newState = {
-          bannerMessage:  nextProps.bannerMessage
-        };
-        return newState;
-      }
-      return null;
-    //}
+    if (nextProps.visibleTime !== undefined  && nextProps.visibleTime > 0){
+      let newState = {
+        bannerMessage: nextProps.bannerMessage,
+        visibleTime: nextProps.visibleTime
+      };
+      return newState;
+    }
+    return null;
+  }
+
+  shouldComponentUpdate(nextProps, nextState){
+   /* if(nextProps.visibleTime !== undefined && 
+      nextState.visibleTime !== this.state.visibleTime){
+      return true;
+    }
+    else{
+      return false;
+    }*/
+
+    return true;
   }
 
 
-  /*async hideBanner() {
-    await this.setState({bannerMessage: this.props.title});
-    await this.timeout(1000 + this.props.visibleTime);
-    await this.setState({ bannerMessage: null });
-  }*/
+  async hideBanner() {
+    if(this.props.visibleTime !== undefined && this.props.visibleTime > 0)
+    {
+      await this.timeout(1000 + this.props.visibleTime);
+      await this.setState({ show: false });
+    }
+  }
 
   renderBanner() {
-    if (this.props.title) {
-
+    console.log("show: "+ this.state.show);
+    if (this.props.title && (this.state.show === undefined || this.state.show)) {
+      {this.hideBanner()}
       return (
         <div key="banner" className="banner" style={this.props.css}>
           <label>{this.props.title}</label>
@@ -54,8 +69,6 @@ class Banner extends Component {
     return new Promise(resolve => setTimeout(resolve, ms));
   }
 
-
-
   render() {
     return (
       <ReactCSSTransitionGroup
@@ -65,6 +78,7 @@ class Banner extends Component {
         transitionLeave={true}
         transitionEnterTimeout={1000}
         transitionLeaveTimeout={1000}
+        transitionAppearTimeout={1000}
       >
         {this.renderBanner()}
       </ReactCSSTransitionGroup>
