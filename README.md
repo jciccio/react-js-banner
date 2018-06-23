@@ -10,7 +10,7 @@ React JS Banner Component with fade in and fade out animation.
 
 # Description
 
-Banner text component, style (font and background) can be customized using common css rules. By default the banner has a fade in and fade out animation of 1s.
+Banner text component, style (font and background) can be customized using common css rules. By default the banner has a fade in and fade out animation of 1s. This can be used in two ways, banner can be shown for a specific amount of time using visibleTime prop, or can be handled manually by making the title text null or changing the string.
 
 # How it looks
 
@@ -41,6 +41,16 @@ Example:
 />
 ```
 
+If you want the banner to be available for a specific amount of time, visibleTime prop can be passed:
+
+```javascript
+<Banner 
+  title="This is an example banner with CSS" 
+  css={this.state.banner3Css} 
+  visibleTime={3000}
+/>
+```
+
 For instance, you can define the background color, font color, font family, size, etc.
 
 ```java
@@ -54,6 +64,7 @@ For instance, you can define the background color, font color, font family, size
 Props available:
 * title (banner title/message)
 * css (style for the banner)
+* visibleTime (time in ms that the banner will be shown)
 
 
 # Props
@@ -62,7 +73,7 @@ Props available:
 | ------------- |:-------------:| -----:|:-----|
 | title      | String | Y | Adding some text will make the banner appear |
 | css | object     | N|  CSS customizations |
-
+| visibleTime | int     | N|  time in ms you want the banner to be visible |
 
 
 # Changelog
@@ -70,6 +81,8 @@ Props available:
 ### v0.1.0
 * Initial release
 
+### v0.2.0
+* Visible time feature added
 
 # License 
 
