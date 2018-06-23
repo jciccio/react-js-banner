@@ -4,6 +4,12 @@ import "babel-polyfill";
 
 import "./banner.css";
 
+/**
+ * Banner component
+ *
+ * @version 0.1.1
+ * @author [Jose Antonio Ciccio](https://github.com/jciccio)
+ */
 class Banner extends Component {
   constructor(props) {
     super(props);
