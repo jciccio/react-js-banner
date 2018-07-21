@@ -30,16 +30,25 @@ class Banner extends Component {
     return null;
   }
 
-  shouldComponentUpdate(nextProps, nextState){
-   /* if(nextProps.visibleTime !== undefined && 
-      nextState.visibleTime !== this.state.visibleTime){
-      return true;
+  renderImage(){
+    if (this.props.image && this.props.imageClass){
+      return(
+        <img 
+          src={this.props.image} 
+          className={this.props.imageClass}
+        />
+      )
+    }
+    else if(this.props.image){
+      return (
+        <img 
+          src={this.props.image} 
+        />
+      )
     }
     else{
-      return false;
-    }*/
-
-    return true;
+      return null;
+    }
   }
 
 
@@ -57,10 +66,12 @@ class Banner extends Component {
       {this.hideBanner()}
       return (
         <div key="banner" className="banner" style={this.props.css}>
+          {this.renderImage()}
           <label>{this.props.title}</label>
         </div>
       );
-    } else {
+    } 
+    else {
       return null;
     }
   }

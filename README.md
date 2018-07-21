@@ -61,10 +61,24 @@ For instance, you can define the background color, font color, font family, size
 }
 ```
 
+Example of banner with image:
+
+``` html
+<Banner 
+  title="This is an example banner with CSS and Image" 
+  image={logo} 
+  imageClass="App-logo"
+  css={this.state.banner2Css}
+/>
+
+```
+
 Props available:
 * title (banner title/message)
 * css (style for the banner)
 * visibleTime (time in ms that the banner will be shown)
+* image (image to show left of banner)
+* imageClass (css class to customize image)
 
 
 # Props
@@ -74,15 +88,21 @@ Props available:
 | title      | String | Y | Adding some text will make the banner appear |
 | css | object     | N|  CSS customizations |
 | visibleTime | int     | N|  time in ms you want the banner to be visible |
-
+| image | String     | N|  image to appear at the left of text |
+| imageClass | String     | N|  image css class e.g "image-customized-class" |
 
 # Changelog
+
+### v0.2.1
+* Feature for adding images to banner added
+
+### v0.2.0
+* Visible time feature added
 
 ### v0.1.0
 * Initial release
 
-### v0.2.0
-* Visible time feature added
+
 
 # License 
 

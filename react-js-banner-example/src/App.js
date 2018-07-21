@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import Banner from 'react-js-banner';
 import './App.css';
+import logo from './logo.svg';
 
 class App extends Component {
 
@@ -27,6 +28,8 @@ class App extends Component {
        <Banner title="This is an example banner with CSS" css={this.state.banner1Css}/>
        <Banner title="This is an example banner with CSS" css={this.state.banner2Css}/>
        <Banner title="This is an example banner with CSS" css={this.state.banner3Css} visibleTime={3000}/>
+
+       <Banner title="This is an example banner with CSS and Image" image={logo} imageClass="App-logo" css={this.state.banner2Css}/>
 
       </div>
     );
