@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import ReactCSSTransitionGroup from "react-addons-css-transition-group";
 import "babel-polyfill";
-
+import PropTypes from 'prop-types';
 import "./banner.css";
 
 /**
@@ -10,6 +10,15 @@ import "./banner.css";
  * @version 0.1.1
  * @author [Jose Antonio Ciccio](https://github.com/jciccio)
  */
+
+Banner.propTypes = {
+  title: PropTypes.string,
+  css: PropTypes.object,
+  visibleTime: PropTypes.number,
+  image: PropTypes.object,
+  imageClass: PropTypes.string
+}
+
 class Banner extends Component {
   constructor(props) {
     super(props);
