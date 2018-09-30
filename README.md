@@ -6,11 +6,12 @@
 
 # react-js-banner
 
-React JS Banner Component with fade in and fade out animation.
+Simple React JS line banner Component with fade in and fade out animation.
 
 # Description
 
-Banner text component, style (font and background) can be customized using common css rules. By default the banner has a fade in and fade out animation of 1s. This can be used in two ways, banner can be shown for a specific amount of time using visibleTime prop, or can be handled manually by making the title text null or changing the string.
+It is a simple line text banner component (like warning, error, success). 
+Styles (font and background) can be customized. By default the banner has a fade in and fade out animation of 2s. This can be used in two ways, banner can be shown for a specific amount of time using visibleTime prop, or can be handled manually by making the title text null or changing the string.
 
 # How it looks
 
@@ -93,6 +94,10 @@ Props available:
 
 # Changelog
 
+### v0.2.2
+* Bug fixing
+* Prop types added
+
 ### v0.2.1
 * Feature for adding images to banner added
 
@@ -103,7 +108,6 @@ Props available:
 * Initial release
 
 
-
 # License 
 
-Licensed under the MIT License.
+Licensed under the MIT License © [jciccio](https://www.npmjs.com/~jciccio)

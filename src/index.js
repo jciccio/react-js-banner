@@ -6,8 +6,6 @@ import "./banner.css";
 
 /**
  * Banner component
- *
- * @version 0.1.1
  * @author [Jose Antonio Ciccio](https://github.com/jciccio)
  */
 
@@ -70,7 +68,6 @@ class Banner extends Component {
   }
 
   renderBanner() {
-    console.log("show: "+ this.state.show);
     if (this.props.title && (this.state.show === undefined || this.state.show)) {
       {this.hideBanner()}
       return (
@@ -105,5 +102,13 @@ class Banner extends Component {
     );
   }
 }
+
+Banner.propTypes = {
+  title: PropTypes.string.isRequired,
+  css: PropTypes.object,
+  visibleTime: PropTypes.number,
+  image: PropTypes.string,
+  imageClase: PropTypes.string
+};
 
 export default Banner;
