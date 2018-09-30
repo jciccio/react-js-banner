@@ -9,14 +9,6 @@ import "./banner.css";
  * @author [Jose Antonio Ciccio](https://github.com/jciccio)
  */
 
-Banner.propTypes = {
-  title: PropTypes.string,
-  css: PropTypes.object,
-  visibleTime: PropTypes.number,
-  image: PropTypes.object,
-  imageClass: PropTypes.string
-}
-
 class Banner extends Component {
   constructor(props) {
     super(props);
