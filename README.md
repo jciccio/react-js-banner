@@ -17,6 +17,9 @@ Styles (font and background) can be customized. By default the banner has a fade
 
 ![alt text](banner.png "React JS Banner example")
 
+**How to thank me?**
+Just click on ⭐️ button :)
+
 # Installation
 
 Install it from npm and include it in your React build process (using Webpack, Browserify, etc).
