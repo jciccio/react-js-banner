@@ -94,8 +94,15 @@ Props available:
 | visibleTime | int     | N|  time in ms you want the banner to be visible |
 | image | String     | N|  image to appear at the left of text |
 | imageClass | String     | N|  image css class e.g "image-customized-class" |
+| transitionAppearTime | number| N|  time for the banner to appear |
+| transitionTime | number | N|  time for the transition to take |
+
 
 # Changelog
+
+### v0.2.4
+* Added transition show and hide times as prop
+* Added appear time as prop
 
 ### v0.2.2
 * Bug fixing

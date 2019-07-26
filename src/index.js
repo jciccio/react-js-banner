@@ -79,15 +79,16 @@ class Banner extends Component {
   }
 
   render() {
+
+    let appearTime = this.props.transitionAppearTime ? this.props.transitionAppearTime: 1000;
+    let transitionTime = this.props.transitionTime ? this.props.transitionTime: 1000;
     return (
       <ReactCSSTransitionGroup
         transitionName="banner-transition"
         transitionAppear={true}
-        transitionEnter={true}
-        transitionLeave={true}
-        transitionEnterTimeout={1000}
-        transitionLeaveTimeout={1000}
-        transitionAppearTimeout={1000}
+        transitionEnterTimeout={transitionTime}
+        transitionLeaveTimeout={transitionTime}
+        transitionAppearTimeout={appearTime}
       >
         {this.renderBanner()}
       </ReactCSSTransitionGroup>
@@ -100,7 +101,9 @@ Banner.propTypes = {
   css: PropTypes.object,
   visibleTime: PropTypes.number,
   image: PropTypes.string,
-  imageClase: PropTypes.string
+  imageClase: PropTypes.string,
+  transitionAppearTime: PropTypes.number,
+  transitionTime: PropTypes.number
 };
 
 export default Banner;
