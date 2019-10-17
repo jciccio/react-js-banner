@@ -31,6 +31,8 @@ class App extends Component {
 
        <Banner title="This is an example banner with CSS and Image" image={logo} imageClass="App-logo" css={this.state.banner2Css}/>
 
+       <Banner title={["This is ", <strong>not</strong>,  "working."]} />
+
       </div>
     );
   }
