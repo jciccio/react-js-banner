@@ -23,16 +23,12 @@ class App extends Component {
         <header className="App-header">
           <h1 className="App-title">react-js-banner Component</h1>
         </header>
-
-       <Banner title="This is an example banner" />
-       <Banner title="This is an example banner with CSS" css={this.state.banner1Css}/>
-       <Banner title="This is an example banner with CSS" css={this.state.banner2Css}/>
-       <Banner title="This is an example banner with CSS" css={this.state.banner3Css} visibleTime={3000}/>
-
-       <Banner title="This is an example banner with CSS and Image" image={logo} imageClass="App-logo" css={this.state.banner2Css}/>
-
-       <Banner title={["This is ", <strong>not</strong>,  "working."]} />
-
+        <Banner title="This is an example banner" showBanner={true} />
+        <Banner title="This is an example banner with CSS" css={this.state.banner1Css}/>
+        <Banner title="This is an example banner with CSS" css={this.state.banner2Css}/>
+        <Banner title="This is an example banner with CSS" css={this.state.banner3Css} visibleTime={3000} showBanner={false}/>
+        <Banner title="This is an example banner with CSS and Image" image={logo} imageClass="App-logo" css={this.state.banner2Css}/>
+        <Banner title={[<div>HTML <i> Italics</i></div>]} />
       </div>
     );
   }

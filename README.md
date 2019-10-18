@@ -89,18 +89,25 @@ Props available:
 
 | Name        | Type            | Mandatory | Description  
 | ------------- |:-------------:| -----:|:-----|
-| title      | String | Y | Adding some text will make the banner appear |
+| title      | String | N | Adding some text will make the banner appear |
 | css | object     | N|  CSS customizations |
 | visibleTime | int     | N|  time in ms you want the banner to be visible |
 | image | String     | N|  image to appear at the left of text |
 | imageClass | String     | N|  image css class e.g "image-customized-class" |
 | transitionAppearTime | number| N|  time for the banner to appear |
 | transitionTime | number | N|  time for the transition to take |
+| showBanner | bool | N|  force the banner to show or hide, this will override the `visibleTime` variable |
+
 
 
 # Changelog
 
-### v0.2.4
+### v0.3.0
+* Added ability to show / hide banner whenever is required via new showBanner prop
+* If the prop is not defined will show the banner if it has a title defined
+* Banner can render HTML snippets
+
+### v0.2.5
 * Added transition show and hide times as prop
 * Added appear time as prop
 

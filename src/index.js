@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import ReactCSSTransitionGroup from "react-addons-css-transition-group";
+
 import "babel-polyfill";
 import PropTypes from 'prop-types';
 import "./banner.css";
@@ -29,6 +29,14 @@ class Banner extends Component {
     return null;
   }
 
+  render() {
+    let appearTime = this.props.transitionAppearTime ? this.props.transitionAppearTime: 1000;
+    let transitionTime = this.props.transitionTime ? this.props.transitionTime: 1000;
+    return (
+      this.renderBanner()
+    );
+  }
+
   renderImage(){
     if (this.props.image && this.props.imageClass){
       return(
@@ -50,7 +58,6 @@ class Banner extends Component {
     }
   }
 
-
   async hideBanner() {
     if(this.props.visibleTime !== undefined && this.props.visibleTime > 0)
     {
@@ -58,52 +65,45 @@ class Banner extends Component {
       await this.setState({ show: false });
     }
   }
-
+  
   renderBanner() {
-    if (this.props.title && (this.state.show === undefined || this.state.show)) {
-      {this.hideBanner()}
-      return (
-        <div key="banner" className="banner" style={this.props.css}>
-          {this.renderImage()}
-          <label>{this.props.title}</label>
-        </div>
-      );
-    } 
-    else {
-      return null;
+    let showBanner = this.props.showBanner !== undefined ? this.props.showBanner : true;
+    if(showBanner){
+      if (this.props.title && (this.state.show === undefined || this.state.show) ) {
+        {this.hideBanner()}
+        return (
+          <div key="banner" className="banner" style={this.props.css}>
+            {this.renderImage()}
+            {this.renderTitle()}
+          </div>
+        );
+      } 
+      else {
+        return null;
+      }
     }
+    return null;
+  }
+
+  renderTitle(){
+    return <div>{this.props.title}</div>
   }
 
   timeout(ms) {
     return new Promise(resolve => setTimeout(resolve, ms));
   }
 
-  render() {
-
-    let appearTime = this.props.transitionAppearTime ? this.props.transitionAppearTime: 1000;
-    let transitionTime = this.props.transitionTime ? this.props.transitionTime: 1000;
-    return (
-      <ReactCSSTransitionGroup
-        transitionName="banner-transition"
-        transitionAppear={true}
-        transitionEnterTimeout={transitionTime}
-        transitionLeaveTimeout={transitionTime}
-        transitionAppearTimeout={appearTime}
-      >
-        {this.renderBanner()}
-      </ReactCSSTransitionGroup>
-    );
-  }
 }
 
 Banner.propTypes = {
-  title: PropTypes.string.isRequired,
+  title: PropTypes.node,
   css: PropTypes.object,
   visibleTime: PropTypes.number,
   image: PropTypes.string,
   imageClase: PropTypes.string,
   transitionAppearTime: PropTypes.number,
-  transitionTime: PropTypes.number
+  transitionTime: PropTypes.number,
+  showBanner: PropTypes.bool
 };
 
 export default Banner;
