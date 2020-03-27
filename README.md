@@ -102,6 +102,9 @@ Props available:
 
 # Changelog
 
+### v0.4.0
+* Dependencies updated
+
 ### v0.3.0
 * Added ability to show / hide banner whenever is required via new showBanner prop
 * If the prop is not defined will show the banner if it has a title defined

@@ -1,17 +1,16 @@
 {
   "name": "react-js-banner",
-  "version": "0.3.0",
+  "version": "0.4.0",
   "description": "React JS Banner component customizable with autohide option",
   "main": "build/index.js",
   "peerDependencies": {
     "react": "^16.0.0"
   },
   "dependencies": {
-    "react": "^16.0.0",
-    "webpack": "^2.6.1"
+    "@babel/polyfill": "^7.8.7",
+    "react": "^16.0.0"
   },
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
     "start": "webpack --watch",
     "build": "webpack"
   },
@@ -20,20 +19,14 @@
     "email": "jciccio@gmail.com"
   },
   "devDependencies": {
-    "babel-cli": "^6.2.0",
-    "babel-core": "^6.2.1",
-    "babel-eslint": "^6.1.2",
-    "babel-loader": "^6.2.0",
-    "babel-preset-react": "^6.3.13",
-    "babel-preset-stage-1": "^6.1.18",
-    "babel-register": "^6.3.13",
-    "babel-runtime": "^6.3.19",
-    "babel-preset-env": "^1.5.1",
-    "style-loader": "^0.21.0",
-    "css-loader": "^0.28.11",
-    "babel-polyfill": "^6.26.0",
-    "react-transition-group": "^4.3.0",
-    "react-dom": "^16.3.2"
+    "@babel/core": "^7.7.5",
+    "@babel/preset-env": "^7.7.6",
+    "@babel/preset-react": "^7.7.4",
+    "babel-loader": "^8.0.6",
+    "css-loader": "^3.3.0",
+    "style-loader": "^1.0.1",
+    "webpack": "^4.41.2",
+    "webpack-cli": "^3.3.10"
   },
   "repository": {
     "type": "git",
