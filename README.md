@@ -103,6 +103,9 @@ Props available:
 # Changelog
 
 ### v0.4.0
+* Size optimizations
+
+### v0.4.0
 * Dependencies updated
 
 ### v0.3.0
