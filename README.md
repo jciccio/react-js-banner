@@ -113,6 +113,9 @@ Props available:
 
 # Changelog
 
+### v0.5.2
+* Removed polyfill as dependency
+
 ### v0.5.0
 * Added ability to accept children:
 
