@@ -29,6 +29,16 @@ class App extends Component {
         <Banner title="This is an example banner with CSS" css={this.state.banner3Css} visibleTime={3000} showBanner={true}/>
         <Banner title="This is an example banner with CSS and Image" image={logo} imageClass="App-logo" css={this.state.banner2Css}/>
         <Banner title={[<div>HTML <i> Italics</i></div>]} />
+        <Banner showBanner={true}>
+          <div>
+            <h1>h1</h1>
+            <h2>h2</h2>
+            <h3>h3</h3>
+          </div>
+        </Banner>
+        <Banner title="Prueba" showBanner={true}>
+         
+        </Banner>
       </div>
     );
   }

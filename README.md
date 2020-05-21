@@ -77,6 +77,17 @@ Example of banner with image:
 
 ```
 
+New! Now the banner accepts a list of children to display all content data
+```
+<Banner showBanner={true}>
+  <div>
+    <h1>h1</h1>
+    <h2>h2</h2>
+    <h3>h3</h3>
+  </div>
+</Banner>
+```
+
 Props available:
 * title (banner title/message)
 * css (style for the banner)
@@ -102,7 +113,22 @@ Props available:
 
 # Changelog
 
-### v0.4.0
+### v0.5.0
+* Added ability to accept children:
+
+e.g
+
+```
+<Banner showBanner={true}>
+  <div>
+    <h1>h1</h1>
+    <h2>h2</h2>
+    <h3>h3</h3>
+  </div>
+</Banner>
+```
+
+### v0.4.1
 * Size optimizations
 
 ### v0.4.0

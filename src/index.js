@@ -76,6 +76,13 @@ class Banner extends Component {
             {this.renderTitle()}
           </div>
         );
+      }
+      else if (this.props.children){
+        return(
+          <div key="banner" className="banner" style={this.props.css}>
+            {this.props.children}
+          </div>
+        )
       } 
       else {
         return null;
@@ -102,7 +109,8 @@ Banner.propTypes = {
   imageClase: PropTypes.string,
   transitionAppearTime: PropTypes.number,
   transitionTime: PropTypes.number,
-  showBanner: PropTypes.bool
+  showBanner: PropTypes.bool,
+  children: PropTypes.node
 };
 
 export default Banner;

@@ -1,6 +1,6 @@
 {
   "name": "react-js-banner",
-  "version": "0.4.1",
+  "version": "0.5.0",
   "description": "React JS Banner component customizable with autohide option",
   "main": "build/index.js",
   "peerDependencies": {
@@ -19,14 +19,20 @@
     "email": "jciccio@gmail.com"
   },
   "devDependencies": {
-    "@babel/core": "^7.7.5",
-    "@babel/preset-env": "^7.7.6",
-    "@babel/preset-react": "^7.7.4",
-    "babel-loader": "^8.0.6",
-    "css-loader": "^3.3.0",
     "style-loader": "^1.0.1",
     "webpack": "^4.41.2",
-    "webpack-cli": "^3.3.10"
+    "@babel/core": "^7.8.7",
+    "@babel/plugin-proposal-class-properties": "^7.8.3",
+    "@babel/preset-env": "^7.8.7",
+    "@babel/preset-react": "^7.8.3",
+    "babel-loader": "^8.1.0",
+    "css-loader": "^3.4.2",
+    "eslint": "^6.8.0",
+    "eslint-config-airbnb-base": "^14.0.0",
+    "eslint-plugin-import": "^2.20.1",
+    "eslint-plugin-react": "^7.19.0",
+    "react-dom": "^16.6.3",
+    "webpack-cli": "^3.3.11"
   },
   "repository": {
     "type": "git",
