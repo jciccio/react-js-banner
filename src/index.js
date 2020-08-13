@@ -106,7 +106,7 @@ Banner.propTypes = {
   css: PropTypes.object,
   visibleTime: PropTypes.number,
   image: PropTypes.string,
-  imageClase: PropTypes.string,
+  imageClass: PropTypes.string,
   transitionAppearTime: PropTypes.number,
   transitionTime: PropTypes.number,
   showBanner: PropTypes.bool,
