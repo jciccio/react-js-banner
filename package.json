@@ -4,11 +4,10 @@
   "description": "React JS Banner component customizable with autohide option",
   "main": "build/index.js",
   "peerDependencies": {
-    "react": "^16.0.0"
+    "react": "^16.8.0"
   },
   "dependencies": {
-    "@babel/polyfill": "^7.8.7",
-    "react": "^16.0.0"
+    "@babel/polyfill": "^7.12.1"
   },
   "scripts": {
     "start": "webpack --watch",
@@ -19,20 +18,20 @@
     "email": "jciccio@gmail.com"
   },
   "devDependencies": {
-    "style-loader": "^1.0.1",
-    "webpack": "^4.41.2",
-    "@babel/core": "^7.8.7",
-    "@babel/plugin-proposal-class-properties": "^7.8.3",
-    "@babel/preset-env": "^7.8.7",
-    "@babel/preset-react": "^7.8.3",
-    "babel-loader": "^8.1.0",
-    "css-loader": "^3.4.2",
+    "@babel/core": "^7.13.14",
+    "@babel/plugin-proposal-class-properties": "^7.13.0",
+    "@babel/preset-env": "^7.13.12",
+    "@babel/preset-react": "^7.13.13",
+    "babel-loader": "^8.2.2",
+    "css-loader": "^5.2.0",
     "eslint": "^6.8.0",
-    "eslint-config-airbnb-base": "^14.0.0",
-    "eslint-plugin-import": "^2.20.1",
-    "eslint-plugin-react": "^7.19.0",
-    "react-dom": "^16.6.3",
-    "webpack-cli": "^3.3.11"
+    "html-loader": "^2.1.2",
+    "html-webpack-plugin": "^5.3.1",
+    "react": "^16.14.0",
+    "react-dom": "^16.14.0",
+    "style-loader": "^2.0.0",
+    "webpack": "^5.30.0",
+    "webpack-cli": "^4.6.0"
   },
   "repository": {
     "type": "git",
