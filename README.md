@@ -78,7 +78,7 @@ Example of banner with image:
 ```
 
 New! Now the banner accepts a list of children to display all content data
-```
+``` html
 <Banner showBanner={true}>
   <div>
     <h1>h1</h1>
@@ -109,9 +109,20 @@ Props available:
 | transitionTime | number | N|  time for the transition to take |
 | showBanner | bool | N|  force the banner to show or hide, this will override the `visibleTime` variable |
 
+# Donations
+
+If you think that any information you obtained here is useful and worth of some money and are willing to pay for it, feel free to send any amount through Paypal :)
+
+
+You can also follow me on Patreon:
+https://patreon.com/Jacware
 
 
 # Changelog
+
+### v0.6.0
+* Bug Fixes
+* Dependencies updated
 
 ### v0.5.2
 * Removed polyfill as dependency
