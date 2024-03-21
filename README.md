@@ -18,13 +18,13 @@ Styles (font and background) can be customized. By default the banner has a fade
 ![alt text](banner.png "React JS Banner example")
 
 **How to thank me?**
-Just click on ⭐️ button :)
+Just click on ⭐️ button or buy me a tea using the donation button below :)
 
 # Installation
 
 Install it from npm and include it in your React build process (using Webpack, Browserify, etc).
 
-```
+``` console
 npm i react-js-banner
 ```
 
@@ -32,7 +32,7 @@ npm i react-js-banner
 
 Import `Banner` in your react component.
 
-```
+``` javascript
 import Banner from 'react-js-banner';
 ```
 
@@ -40,8 +40,8 @@ Example:
 
 ```javascript
 <Banner 
-	title={this.state.bannerMessage} 
-	css={this.state.bannerCss} 
+  title={this.state.bannerMessage} 
+  css={this.state.bannerCss} 
 />
 ```
 
