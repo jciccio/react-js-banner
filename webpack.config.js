@@ -1,7 +1,5 @@
 const path = require('path');
 
-//const HTMLWebpackPlugin =   require('html-webpack-plugin');
-
 module.exports = {
   entry: './src/index.js',
   mode: 'development',
@@ -9,7 +7,6 @@ module.exports = {
     path: path.resolve(__dirname, 'build'),
     filename: 'index.js',
     libraryTarget: 'commonjs2',
-
   },
   module: {
     rules: [
@@ -41,7 +38,4 @@ module.exports = {
     extensions: [".js",".jsx", '.json']
   },
   devtool: 'inline-source-map'
-
-  
-  
 };

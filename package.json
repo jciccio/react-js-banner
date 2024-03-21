@@ -1,7 +1,7 @@
 {
   "name": "react-js-banner",
-  "version": "0.5.2",
-  "description": "React JS Banner component customizable with autohide option",
+  "version": "0.6.0",
+  "description": "React JS Banner component customizable with auto hide option",
   "main": "build/index.js",
   "peerDependencies": {
     "react": "^16.8.0"
@@ -30,8 +30,8 @@
     "react": "^16.14.0",
     "react-dom": "^16.14.0",
     "style-loader": "^2.0.0",
-    "webpack": "^5.30.0",
-    "webpack-cli": "^4.6.0"
+    "webpack": "^5.91.0",
+    "webpack-cli": "^5.1.4"
   },
   "repository": {
     "type": "git",
