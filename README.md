@@ -121,6 +121,11 @@ https://patreon.com/Jacware
 
 # Changelog
 
+### v0.6.1
+* Removed Polyfill Dependency
+* Package size decreased!
+
+
 ### v0.6.0
 * Bug Fixes
 * Dependencies updated
