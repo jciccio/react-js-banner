@@ -63,15 +63,22 @@ class Banner extends Component {
       await this.timeout(1000 + this.props.visibleTime);
       await this.setState({ show: false });
     }
+    if(this.onHideCallback != null){
+        this.onHideCallback();  
+    }
   }
   
   renderBanner() {
     let showBanner = this.props.showBanner !== undefined ? this.props.showBanner : true;
+    
+    const visibleTimeAnim = (this.state.visibleTime > 0) ? `opacityOn ${this.state.visibleTime}s` : `noFadeOut 3s`;
+    const animation = {"animation": `${visibleTimeAnim} normal forwards`}
+    
     if(showBanner){
       if (this.props.title && (this.state.show === undefined || this.state.show) ) {
-        {this.hideBanner()}
+        this.hideBanner();
         return (
-          <div key="banner" className="banner" style={this.props.css}>
+          <div key="banner" className="banner" style={{...this.props.css, ...animation}}>
             {this.renderImage()}
             {this.renderTitle()}
           </div>
@@ -79,7 +86,7 @@ class Banner extends Component {
       }
       else if (this.props.children){
         return(
-          <div key="banner" className="banner" style={this.props.css}>
+          <div key="banner" className="banner" style={{...this.props.css, ...animation}}>
             {this.props.children}
           </div>
         )
@@ -110,7 +117,12 @@ Banner.propTypes = {
   transitionAppearTime: PropTypes.number,
   transitionTime: PropTypes.number,
   showBanner: PropTypes.bool,
-  children: PropTypes.node
+  children: PropTypes.node,
+  onHideCallback: PropTypes.func
 };
+
+Banner.defaultProps = {
+  onHideCallback: null
+}
 
 export default Banner;

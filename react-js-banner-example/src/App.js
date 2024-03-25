@@ -23,21 +23,35 @@ class App extends Component {
         <header className="App-header">
           <h1 className="App-title">react-js-banner Component</h1>
         </header>
+        <p>
+          Basic Banner Usage
+        </p>
         <Banner title="This is an example banner" showBanner={true} />
         <Banner title="This is an example banner with CSS" css={this.state.banner1Css}/>
         <Banner title="This is an example banner with CSS" css={this.state.banner2Css}/>
-        <Banner title="This is an example banner with CSS" css={this.state.banner3Css} visibleTime={3000} showBanner={true}/>
-        <Banner title="This is an example banner with CSS and Image" image={logo} imageClass="App-logo" css={this.state.banner2Css}/>
-        <Banner title={[<div>HTML <i> Italics</i></div>]} />
+        <Banner 
+          title="This is an example banner with CSS and 3 Seconds of Visibility" 
+          css={this.state.banner3Css} 
+          visibleTime={3000} 
+          showBanner={true}
+        />
+        <Banner 
+          title="This is an example banner with CSS and Image" 
+          image={logo} 
+          imageClass="App-logo" 
+          css={this.state.banner2Css}
+        />
+        
+        <Banner 
+          title={[<div>Title prop supports HTML tags <i>Italics</i><b> Bold</b> etc.</div>]} 
+        />
+        
         <Banner showBanner={true}>
           <div>
-            <h1>h1</h1>
+            <h1>Or you can simply pass children with whatever you need</h1>
             <h2>h2</h2>
             <h3>h3</h3>
           </div>
-        </Banner>
-        <Banner title="Prueba" showBanner={true}>
-         
         </Banner>
       </div>
     );

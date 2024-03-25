@@ -1,3 +1,33 @@
+@keyframes opacityOn {
+    0% {
+        opacity: 0;
+    }
+    25% {
+        opacity: 0;
+    }
+    50% {
+        opacity: 1;
+    }
+    75% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 0;
+    }
+}
+
+@keyframes noFadeOut {
+    0% {
+        opacity: 0;
+    }
+    50% {
+        opacity: 1;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+
 .banner{
   background-color: orange;
   text-align: center;
@@ -9,6 +39,7 @@
   text-align: center;
   align-items: center;
   justify-content: center;
+  animation: opacityOn 5s normal forwards;
 }
 
 .banner-transition-appear {
