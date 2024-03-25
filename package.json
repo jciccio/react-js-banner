@@ -4,7 +4,6 @@
   "description": "React JS Banner component customizable with auto hide option",
   "main": "build/index.js",
   "peerDependencies": {
-    "react": "^16.8.0"
   },
   "dependencies": {
    

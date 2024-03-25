@@ -88,14 +88,6 @@ New! Now the banner accepts a list of children to display all content data
 </Banner>
 ```
 
-Props available:
-* title (banner title/message)
-* css (style for the banner)
-* visibleTime (time in ms that the banner will be shown)
-* image (image to show left of banner)
-* imageClass (css class to customize image)
-
-
 # Props
 
 | Name        | Type            | Mandatory | Description  
@@ -108,6 +100,7 @@ Props available:
 | transitionAppearTime | number| N|  time for the banner to appear |
 | transitionTime | number | N|  time for the transition to take |
 | showBanner | bool | N|  force the banner to show or hide, this will override the `visibleTime` variable |
+| onHideCallback | function | N|  callback when the popup hides (to be used with visible time prop in manage state) |
 
 # Donations
 
@@ -120,6 +113,9 @@ https://patreon.com/Jacware
 
 
 # Changelog
+
+### v0.7.0
+* New function callback when the popup hides. This should be used with the visible time prop.
 
 ### v0.6.1
 * Removed Polyfill Dependency
