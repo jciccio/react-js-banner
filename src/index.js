@@ -17,7 +17,6 @@ class Banner extends Component {
   }
 
   componentDidMount() {
-    console.log("Component Did Mount");
     this.hideBanner();
   }
 
@@ -104,7 +103,6 @@ class Banner extends Component {
   }
 
   timeout(ms) {
-    console.log("In Set Timeout");
     setTimeout(() => {
       if(this.props.onHideCallback != null){
         this.props.onHideCallback(this.props.id);  
@@ -130,7 +128,6 @@ Banner.propTypes = {
 
 Banner.defaultProps = {
   onHideCallback: null,
-  id: 'bannerId'
 }
 
 export default Banner;
