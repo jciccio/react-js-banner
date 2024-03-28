@@ -31,8 +31,7 @@ class App extends Component {
           title="This is an example banner with CSS and 3 Seconds of Visibility" 
           css={this.state.banner3Css} 
           visibleTime={3000} 
-          showBanner={true}
-          onHideCallback={() => alert('This is an example banner with CSS and 3 Seconds of Visibility Hidden')}
+          onHideCallback={(bannerId) => alert('This is an example banner with CSS and 3 Seconds of Visibility Hidden')}
         />
         <Banner 
           id="banner5"

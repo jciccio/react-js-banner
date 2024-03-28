@@ -122,9 +122,28 @@ https://patreon.com/Jacware
 
 
 ### v0.7.0
+#### Changes and features
 * New function callback when the popup hides. This should be used with the visible time prop, call and return the id given as param
-* Breaking Change: Banner Id new prop required
+For example: 
+``` javascript
+<Banner  
+  id="banner4"
+  title="This is an example banner with CSS and 3 Seconds of Visibility" 
+  css={this.state.banner3Css} 
+  visibleTime={3000} 
+  showBanner={true}
+  onHideCallback={(bannerId) => alert('This is an example banner with CSS and 3 Seconds of Visibility Hidden')}
+/>
+``` 
 * Enhanced fade in / out animations
+* Several code updates and optimiation to avoid double rendering
+* There is no need to use the showBanner prop anymore and will soon be deprecated
+
+#### Breaking Changes
+* Banner Id new prop required
+
+#### Other
+showBanner prop is under revision and will be deprecated in a future version
 
 ### v0.6.1
 * Removed Polyfill Dependency
