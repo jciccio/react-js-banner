@@ -12,10 +12,7 @@ class App extends Component {
       banner2Css: { color: "#000", backgroundColor: "grey", fontFamily: "arial" },
       banner3Css: { color: "#FFF", backgroundColor: "red", fontSize: 20 }
     };
-
   }
-
-
 
   render() {
     return (
@@ -26,16 +23,19 @@ class App extends Component {
         <p>
           Basic Banner Usage
         </p>
-        <Banner title="This is an example banner" showBanner={true} />
-        <Banner title="This is an example banner with CSS" css={this.state.banner1Css}/>
-        <Banner title="This is an example banner with CSS" css={this.state.banner2Css}/>
+        <Banner id="banner1" title="This is an example banner" showBanner={true} />
+        <Banner id="banner2" title="This is an example banner with CSS" css={this.state.banner1Css}/>
+        <Banner id="banner3" title="This is an example banner with Another CSS" css={this.state.banner2Css}/>
         <Banner 
+          id="banner4"
           title="This is an example banner with CSS and 3 Seconds of Visibility" 
           css={this.state.banner3Css} 
           visibleTime={3000} 
           showBanner={true}
+          onHideCallback={() => alert('This is an example banner with CSS and 3 Seconds of Visibility Hidden')}
         />
         <Banner 
+          id="banner5"
           title="This is an example banner with CSS and Image" 
           image={logo} 
           imageClass="App-logo" 
@@ -43,10 +43,11 @@ class App extends Component {
         />
         
         <Banner 
-          title={[<div>Title prop supports HTML tags <i>Italics</i><b> Bold</b> etc.</div>]} 
+          id="banner6"
+          title={[<div key="banner1">Title prop supports HTML tags <i>Italics</i><b> Bold</b> etc.</div>]} 
         />
         
-        <Banner showBanner={true}>
+        <Banner id="banner7" showBanner={true} >
           <div>
             <h1>Or you can simply pass children with whatever you need</h1>
             <h2>h2</h2>

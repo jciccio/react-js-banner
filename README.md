@@ -40,8 +40,9 @@ Example:
 
 ```javascript
 <Banner 
-  title={this.state.bannerMessage} 
-  css={this.state.bannerCss} 
+  id="banner1"
+  title="This is an example Banner Title" 
+  css={{ color: "#000", backgroundColor: "grey", fontFamily: "arial" }} 
 />
 ```
 
@@ -49,15 +50,16 @@ If you want the banner to be available for a specific amount of time, visibleTim
 
 ```javascript
 <Banner 
+  id="banner2"
   title="This is an example banner with CSS" 
-  css={this.state.banner3Css} 
+  css={{color: "#FFF", backgroundColor: "red", fontSize: 20 }} 
   visibleTime={3000}
 />
 ```
 
 For instance, you can define the background color, font color, font family, size, etc.
 
-```java
+```javascript
 {
   banner1Css: { color: "#FFF", backgroundColor: "green" },
   banner2Css: { color: "#000", backgroundColor: "grey", fontFamily: "arial" },
@@ -66,9 +68,12 @@ For instance, you can define the background color, font color, font family, size
 ```
 
 Example of banner with image:
-
+```javascript
+import logo from './logo.svg';
+```
 ``` html
 <Banner 
+  id="banner3"
   title="This is an example banner with CSS and Image" 
   image={logo} 
   imageClass="App-logo"
@@ -77,9 +82,9 @@ Example of banner with image:
 
 ```
 
-New! Now the banner accepts a list of children to display all content data
+New! Now the banner accepts a list of children to display all content data to make it more extensible!
 ``` html
-<Banner showBanner={true}>
+<Banner id="banner4">
   <div>
     <h1>h1</h1>
     <h2>h2</h2>
@@ -92,15 +97,16 @@ New! Now the banner accepts a list of children to display all content data
 
 | Name        | Type            | Mandatory | Description  
 | ------------- |:-------------:| -----:|:-----|
+| id      | String | Y | Banner Id you want to use |
 | title      | String | N | Adding some text will make the banner appear |
 | css | object     | N|  CSS customizations |
-| visibleTime | int     | N|  time in ms you want the banner to be visible |
+| visibleTime | number     | N|  time in seconds you want the banner to be visible |
 | image | String     | N|  image to appear at the left of text |
 | imageClass | String     | N|  image css class e.g "image-customized-class" |
 | transitionAppearTime | number| N|  time for the banner to appear |
 | transitionTime | number | N|  time for the transition to take |
 | showBanner | bool | N|  force the banner to show or hide, this will override the `visibleTime` variable |
-| onHideCallback | function | N|  callback when the popup hides (to be used with visible time prop in manage state) |
+| onHideCallback | function | N|  callback when the popup hides (to be used with visible time prop in manage state, will pass as param the banner id) |
 
 # Donations
 
@@ -114,13 +120,15 @@ https://patreon.com/Jacware
 
 # Changelog
 
+
 ### v0.7.0
-* New function callback when the popup hides. This should be used with the visible time prop.
+* New function callback when the popup hides. This should be used with the visible time prop, call and return the id given as param
+* Breaking Change: Banner Id new prop required
+* Enhanced fade in / out animations
 
 ### v0.6.1
 * Removed Polyfill Dependency
 * Package size decreased!
-
 
 ### v0.6.0
 * Bug Fixes

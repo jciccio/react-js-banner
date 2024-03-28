@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-
+import {useState} from 'react';
 import PropTypes from 'prop-types';
 import "./banner.css";
 
@@ -7,22 +7,27 @@ import "./banner.css";
  * Banner component
  * @author [Jose Antonio Ciccio](https://github.com/jciccio)
  */
-
 class Banner extends Component {
   constructor(props) {
     super(props);
-     this.state = {
-      visibleTime: 0,
-      show: undefined
+    this.state = {
+      showBanner: undefined
     };
+   
+  }
+
+  componentDidMount() {
+    console.log("Component Did Mount");
+    this.hideBanner();
   }
 
   static getDerivedStateFromProps(nextProps, prevState) {
     if (nextProps.visibleTime !== undefined  && nextProps.visibleTime > 0){
       let newState = {
         bannerMessage: nextProps.bannerMessage,
-        visibleTime: nextProps.visibleTime
+        showBanner: true
       };
+
       return newState;
     }
     return null;
@@ -60,23 +65,19 @@ class Banner extends Component {
   async hideBanner() {
     if(this.props.visibleTime !== undefined && this.props.visibleTime > 0)
     {
-      await this.timeout(1000 + this.props.visibleTime);
-      await this.setState({ show: false });
-    }
-    if(this.onHideCallback != null){
-        this.onHideCallback();  
+      this.timeout(this.props.visibleTime);
     }
   }
   
   renderBanner() {
-    let showBanner = this.props.showBanner !== undefined ? this.props.showBanner : true;
     
-    const visibleTimeAnim = (this.state.visibleTime > 0) ? `opacityOn ${this.state.visibleTime}s` : `noFadeOut 3s`;
+    const showBanner = this.state.showBanner !== undefined ? this.state.showBanner : true;
+    
+    const visibleTimeAnim = (this.props.visibleTime > 0) ? `opacityOn ${this.props.visibleTime/1000}s` : `noFadeOut 3s`;
     const animation = {"animation": `${visibleTimeAnim} normal forwards`}
-    
     if(showBanner){
-      if (this.props.title && (this.state.show === undefined || this.state.show) ) {
-        this.hideBanner();
+      if (this.props.title && (this.state.show === undefined || this.state.showBanner) ) {
+        
         return (
           <div key="banner" className="banner" style={{...this.props.css, ...animation}}>
             {this.renderImage()}
@@ -99,11 +100,16 @@ class Banner extends Component {
   }
 
   renderTitle(){
-    return <div>{this.props.title}</div>
+    return <div key={`BannerId-${this.props.id}`}>{this.props.title}</div>
   }
 
   timeout(ms) {
-    return new Promise(resolve => setTimeout(resolve, ms));
+    console.log("In Set Timeout");
+    setTimeout(() => {
+      if(this.props.onHideCallback != null){
+        this.props.onHideCallback(this.props.id);  
+      }
+    }, ms);
   }
 
 }
@@ -114,6 +120,7 @@ Banner.propTypes = {
   visibleTime: PropTypes.number,
   image: PropTypes.string,
   imageClass: PropTypes.string,
+  id: PropTypes.string.isRequired,
   transitionAppearTime: PropTypes.number,
   transitionTime: PropTypes.number,
   showBanner: PropTypes.bool,
@@ -122,7 +129,8 @@ Banner.propTypes = {
 };
 
 Banner.defaultProps = {
-  onHideCallback: null
+  onHideCallback: null,
+  id: 'bannerId'
 }
 
 export default Banner;

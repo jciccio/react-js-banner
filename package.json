@@ -3,10 +3,9 @@
   "version": "0.6.1",
   "description": "React JS Banner component customizable with auto hide option",
   "main": "build/index.js",
-  "peerDependencies": {
-  },
+  "peerDependencies": {},
   "dependencies": {
-   
+    
   },
   "scripts": {
     "start": "webpack --watch",
@@ -26,11 +25,12 @@
     "eslint": "^6.8.0",
     "html-loader": "^2.1.2",
     "html-webpack-plugin": "^5.3.1",
-    "react": "^16.14.0",
-    "react-dom": "^16.14.0",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0",
     "style-loader": "^3.3.4",
     "webpack": "^5.91.0",
-    "webpack-cli": "^5.1.4"
+    "webpack-cli": "^5.1.4",
+    "prop-types": "^15.8.1"
   },
   "repository": {
     "type": "git",
