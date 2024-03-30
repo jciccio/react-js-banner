@@ -13,7 +13,7 @@ module.exports = {
       {
         test: /\.js$/,
         include: path.resolve(__dirname, 'src'),
-        exclude: /(node_modules|bower_components|build)/,
+        exclude: /(node_modules|bower_components|build|images)/,
         use: {
           loader: 'babel-loader'
         }
@@ -29,7 +29,7 @@ module.exports = {
       {
         test: /\.css$/,
         include: path.resolve(__dirname, 'src'),
-        exclude: /(node_modules|bower_components|build)/,
+        exclude: /(node_modules|bower_components|build|images)/,
         use:['style-loader','css-loader']
       }
     ]

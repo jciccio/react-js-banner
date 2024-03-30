@@ -15,7 +15,7 @@ Styles (font and background) can be customized. By default the banner has a fade
 
 # How it looks
 
-![alt text](banner.png "React JS Banner example")
+![alt text](images/banner.png "React JS Banner example")
 
 **How to thank me?**
 Just click on ⭐️ button or buy me a tea using the donation button below :)
