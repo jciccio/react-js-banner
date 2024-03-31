@@ -120,6 +120,9 @@ https://patreon.com/Jacware
 
 # Changelog
 
+### v0.7.2
+* Package size further optimized from ~118kb+ to <11kb packed / 31kb unpacked :) 
+
 ### v0.7.1
 * Package size optimized from ~600kb+ to <100kb 
 

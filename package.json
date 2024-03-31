@@ -1,11 +1,10 @@
 {
   "name": "react-js-banner",
-  "version": "0.7.1",
+  "version": "0.7.2",
   "description": "React JS Banner component customizable with auto hide option",
   "main": "build/index.js",
   "peerDependencies": {},
   "dependencies": {
-    "source-map-explorer": "^2.5.3"
   },
   "scripts": {
     "start": "webpack --watch",
