@@ -120,6 +120,8 @@ https://patreon.com/Jacware
 
 # Changelog
 
+### v0.7.1
+* Package size optimized from ~600kb+ to <100kb 
 
 ### v0.7.0
 #### Changes and features
