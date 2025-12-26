@@ -13,8 +13,6 @@ const Banner = ({
   image,
   imageClass,
   id,
-  transitionAppearTime = 1000,
-  transitionTime = 1000,
   children,
   onHideCallback,
   variant,
