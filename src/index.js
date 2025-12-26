@@ -1,5 +1,4 @@
-import React, { Component } from "react";
-import {useState} from 'react';
+import React, { useState, useEffect } from "react";
 import PropTypes from 'prop-types';
 import "./banner.css";
 
@@ -7,110 +6,100 @@ import "./banner.css";
  * Banner component
  * @author [Jose Antonio Ciccio](https://github.com/jciccio)
  */
-class Banner extends Component {
-  constructor(props) {
-    super(props);
-    this.state = {
-      showBanner: undefined
-    };
-   
-  }
+const Banner = ({
+  title,
+  css = {},
+  visibleTime = 0,
+  image,
+  imageClass,
+  id,
+  transitionAppearTime = 1000,
+  transitionTime = 1000,
+  children,
+  onHideCallback,
+  variant,
+  position,
+  dismissible
+}) => {
+  const [showBanner, setShowBanner] = useState(false);
+  const [isClosing, setIsClosing] = useState(false);
 
-  componentDidMount() {
-    this.hideBanner();
-  }
+  useEffect(() => {
+    // Show banner on mount
+    setShowBanner(true);
 
-  static getDerivedStateFromProps(nextProps, prevState) {
-    if (nextProps.visibleTime !== undefined  && nextProps.visibleTime > 0){
-      let newState = {
-        bannerMessage: nextProps.bannerMessage,
-        showBanner: true
-      };
-
-      return newState;
+    if (visibleTime > 0) {
+      const timer = setTimeout(() => {
+        handleClose();
+      }, visibleTime);
+      return () => clearTimeout(timer);
     }
-    return null;
-  }
+  }, [visibleTime, title, children]); // Re-run if content or timing changes
 
-  render() {
-    let appearTime = this.props.transitionAppearTime ? this.props.transitionAppearTime: 1000;
-    let transitionTime = this.props.transitionTime ? this.props.transitionTime: 1000;
-    return (
-      this.renderBanner()
-    );
-  }
-
-  renderImage(){
-    if (this.props.image && this.props.imageClass){
-      return(
-        <img 
-          src={this.props.image} 
-          className={this.props.imageClass}
-        />
-      )
-    }
-    else if(this.props.image){
-      return (
-        <img 
-          src={this.props.image} 
-        />
-      )
-    }
-    else{
-      return null;
-    }
-  }
-
-  async hideBanner() {
-    if(this.props.visibleTime !== undefined && this.props.visibleTime > 0)
-    {
-      this.timeout(this.props.visibleTime);
-    }
-  }
-  
-  renderBanner() {
-    
-    const showBanner = this.state.showBanner !== undefined ? this.state.showBanner : true;
-    
-    const visibleTimeAnim = (this.props.visibleTime > 0) ? `opacityOn ${this.props.visibleTime/1000}s` : `noFadeOut 3s`;
-    const animation = {"animation": `${visibleTimeAnim} normal forwards`}
-    if(showBanner){
-      if (this.props.title && (this.state.show === undefined || this.state.showBanner) ) {
-        
-        return (
-          <div key="banner" className="banner" style={{...this.props.css, ...animation}}>
-            {this.renderImage()}
-            {this.renderTitle()}
-          </div>
-        );
-      }
-      else if (this.props.children){
-        return(
-          <div key="banner" className="banner" style={{...this.props.css, ...animation}}>
-            {this.props.children}
-          </div>
-        )
-      } 
-      else {
-        return null;
-      }
-    }
-    return null;
-  }
-
-  renderTitle(){
-    return <div key={`BannerId-${this.props.id}`}>{this.props.title}</div>
-  }
-
-  timeout(ms) {
+  const handleClose = () => {
+    setIsClosing(true);
     setTimeout(() => {
-      if(this.props.onHideCallback != null){
-        this.props.onHideCallback(this.props.id);  
+      setShowBanner(false);
+      setIsClosing(false);
+      if (onHideCallback) {
+        onHideCallback(id);
       }
-    }, ms);
-  }
+    }, 500); // Wait for animation if we add one, or simply unmount
+  };
 
-}
+  if (!showBanner) return null;
+
+  const getVariantClass = () => {
+    switch (variant) {
+      case 'success': return 'banner-success';
+      case 'error': return 'banner-error';
+      case 'warning': return 'banner-warning';
+      case 'info': return 'banner-info';
+      default: return '';
+    }
+  };
+
+  const getPositionClass = () => {
+    switch (position) {
+      case 'top': return 'banner-top';
+      case 'bottom': return 'banner-bottom';
+      default: return '';
+    }
+  };
+
+  // Construct styles and classes
+  const bannerClasses = `banner ${getVariantClass()} ${getPositionClass()}`;
+  const animationStyle = visibleTime > 0
+    ? { animation: `opacityOn ${visibleTime / 1000}s normal forwards` }
+    : { animation: `noFadeOut 3s normal forwards` };
+
+  return (
+    <div
+      key="banner"
+      className={bannerClasses}
+      style={{ ...css, ...animationStyle }}
+    >
+      <div className="banner-content">
+        {image && (
+          <img
+            src={image}
+            className={imageClass}
+            alt="banner icon"
+            style={{ marginRight: 10 }}
+          />
+        )}
+        {title && <div key={`BannerId-${id}`}>{title}</div>}
+        {children}
+      </div>
+
+      {dismissible && (
+        <button className="banner-close-btn" onClick={handleClose}>
+          &times;
+        </button>
+      )}
+    </div>
+  );
+};
 
 Banner.propTypes = {
   title: PropTypes.node,
@@ -118,16 +107,14 @@ Banner.propTypes = {
   visibleTime: PropTypes.number,
   image: PropTypes.string,
   imageClass: PropTypes.string,
-  id: PropTypes.string.isRequired,
+  id: PropTypes.string, // Made optional as it's not strictly needed for internal logic anymore unless for callback
   transitionAppearTime: PropTypes.number,
   transitionTime: PropTypes.number,
-  showBanner: PropTypes.bool,
   children: PropTypes.node,
-  onHideCallback: PropTypes.func
+  onHideCallback: PropTypes.func,
+  variant: PropTypes.oneOf(['success', 'error', 'warning', 'info']),
+  position: PropTypes.oneOf(['top', 'bottom']),
+  dismissible: PropTypes.bool
 };
-
-Banner.defaultProps = {
-  onHideCallback: null,
-}
 
 export default Banner;

@@ -1,61 +1,78 @@
+.banner {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  min-height: 50px;
+  font-family: Arial, sans-serif;
+  color: #fff;
+  transition: opacity 1s, top 0.5s, bottom 0.5s;
+  z-index: 1000;
+  box-sizing: border-box;
+  padding: 10px 20px;
+  position: relative;
+}
+
+.banner-content {
+  display: flex;
+  align-items: center;
+  flex: 1;
+  justify-content: center;
+}
+
+.banner-close-btn {
+  background: transparent;
+  border: none;
+  color: inherit;
+  font-size: 20px;
+  cursor: pointer;
+  padding: 0 10px;
+  margin-left: auto;
+  opacity: 0.8;
+}
+
+.banner-close-btn:hover {
+  opacity: 1;
+}
+
+/* Positions */
+.banner-top {
+  position: fixed;
+  top: 0;
+  left: 0;
+}
+
+.banner-bottom {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+}
+
+/* Variants */
+.banner-success {
+  background-color: #28a745;
+}
+
+.banner-error {
+  background-color: #dc3545;
+}
+
+.banner-warning {
+  background-color: #ffc107;
+  color: #333;
+}
+
+.banner-info {
+  background-color: #17a2b8;
+}
+
+/* Animations */
 @keyframes opacityOn {
-    0% {
-        opacity: 0;
-    }
-    25% {
-        opacity: 0;
-    }
-    50% {
-        opacity: 1;
-    }
-    85% {
-        opacity: 1;
-    }
-    100% {
-        opacity: 0;
-    }
+  0% { opacity: 0; }
+  100% { opacity: 1; }
 }
 
 @keyframes noFadeOut {
-    0% {
-        opacity: 0;
-    }
-    50% {
-        opacity: 1;
-    }
-    100% {
-        opacity: 1;
-    }
-}
-
-.banner{
-  background-color: orange;
-  text-align: center;
-  padding: 10px 10px;
-  font-size: 16px;
-  font-weight: bold;
-  display: flex;
-  margin-bottom: 10px;
-  text-align: center;
-  align-items: center;
-  justify-content: center;
-  animation: opacityOn 5s normal forwards;
-}
-
-.banner-transition-appear {
-  opacity: 0.01;
-}
-
-.banner-transition-appear.banner-transition-appear-active {
-  opacity: 1;
-  transition: opacity 2s ease;
-}
-
-.banner-transition-leave {
-  opacity: 1;
-}
-
-.banner-transition-leave.banner-transition-leave-active {
-  opacity: 0.01;
-  transition: opacity 2s ease;
+  0% { opacity: 1; }
+  100% { opacity: 1; }
 }

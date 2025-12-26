@@ -18,39 +18,55 @@ class App extends Component {
     return (
       <div className="App">
         <header className="App-header">
-          <h1 className="App-title">react-js-banner Component</h1>
+          <h1 className="App-title">react-js-banner Functional Component</h1>
         </header>
-        <p>
-          Basic Banner Usage
-        </p>
-        <Banner id="banner1" title="This is an example banner" showBanner={true} />
-        <Banner id="banner2" title="This is an example banner with CSS" css={this.state.banner1Css}/>
-        <Banner id="banner3" title="This is an example banner with Another CSS" css={this.state.banner2Css}/>
-        <Banner 
+
+        <p>New Features Support (2026)</p>
+
+        {/* Top Fixed Banner */}
+        <Banner
+          title="This is a fixed TOP banner (error variant)"
+          position="top"
+          variant="error"
+          dismissible={true}
+        />
+
+        {/* Bottom Fixed Banner */}
+        <Banner
+          title="This is a fixed BOTTOM banner (info variant)"
+          position="bottom"
+          variant="info"
+          dismissible={true}
+        />
+
+        <div style={{ marginTop: 60 }}>
+          <p>Standard Banners</p>
+          <Banner title="Default Banner (Success color by default if we changed defaults, but here is standard)" />
+
+          <Banner
+            title="Success Variant Banner"
+            variant="success"
+            dismissible
+          />
+          <Banner
+            title="Warning Variant Banner"
+            variant="warning"
+          />
+        </div>
+
+        <p>Legacy Usage Compatibility</p>
+        <Banner id="banner1" title="Legacy: Custom CSS" css={this.state.banner1Css} />
+        <Banner
           id="banner4"
-          title="This is an example banner with CSS and 3 Seconds of Visibility" 
-          css={this.state.banner3Css} 
-          visibleTime={3000} 
-          onHideCallback={(bannerId) => alert('This is an example banner with CSS and 3 Seconds of Visibility Hidden')}
+          title="Legacy: Auto-hide in 3s"
+          css={this.state.banner3Css}
+          visibleTime={3000}
+          onHideCallback={() => console.log('Hidden')}
         />
-        <Banner 
-          id="banner5"
-          title="This is an example banner with CSS and Image" 
-          image={logo} 
-          imageClass="App-logo" 
-          css={this.state.banner2Css}
-        />
-        
-        <Banner 
-          id="banner6"
-          title={[<div key="banner1">Title prop supports HTML tags <i>Italics</i><b> Bold</b> etc.</div>]} 
-        />
-        
-        <Banner id="banner7" showBanner={true} >
+
+        <Banner id="banner7">
           <div>
-            <h1>Or you can simply pass children with whatever you need</h1>
-            <h2>h2</h2>
-            <h3>h3</h3>
+            <h3>Children functionality works</h3>
           </div>
         </Banner>
       </div>
