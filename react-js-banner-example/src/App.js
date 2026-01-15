@@ -54,6 +54,16 @@ class App extends Component {
           />
         </div>
 
+        <div style={{ marginTop: 60 }}>
+          <p>Image Support</p>
+          <Banner
+            title="This is an example banner with Image"
+            image={logo}
+            imageClass="App-logo"
+            css={{ color: "white", backgroundColor: "#333" }}
+          />
+        </div>
+
         <p>Legacy Usage Compatibility</p>
         <Banner id="banner1" title="Legacy: Custom CSS" css={this.state.banner1Css} />
         <Banner
